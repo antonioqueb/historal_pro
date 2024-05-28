@@ -1,4 +1,3 @@
-
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
@@ -60,8 +59,8 @@ export default function DashboardEmployed() {
                 <AvatarFallback>LM</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="text-lg font-semibold">Laura Martínez</h3>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">Diseñadora Gráfica</p>
+                <h3 className="text-lg font-semibold">Laura Mart&iacute;nez</h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">Dise&ntilde;adora Gr&aacute;fica</p>
               </div>
             </CardHeader>
             <CardContent>
@@ -89,7 +88,7 @@ export default function DashboardEmployed() {
                 <AvatarFallback>PR</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="text-lg font-semibold">Pedro Ramírez</h3>
+                <h3 className="text-lg font-semibold">Pedro Ram&iacute;rez</h3>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">Analista de Datos</p>
               </div>
             </CardHeader>
@@ -118,7 +117,7 @@ export default function DashboardEmployed() {
                 <AvatarFallback>SG</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="text-lg font-semibold">Sara García</h3>
+                <h3 className="text-lg font-semibold">Sara Garc&iacute;a</h3>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">Gerente de Proyectos</p>
               </div>
             </CardHeader>
@@ -145,7 +144,7 @@ export default function DashboardEmployed() {
           <Button>Ver Todos los Empleados</Button>
         </div>
         <div className="mt-8">
-          <h3 className="text-lg font-semibold mb-4">Últimas Reseñas</h3>
+          <h3 className="text-lg font-semibold mb-4">&Uacute;ltimas Rese&ntilde;as</h3>
           <div className="grid gap-4">
             <div
               className="flex items-start gap-4 p-4 rounded-md bg-zinc-100 dark:bg-zinc-800">
@@ -155,7 +154,7 @@ export default function DashboardEmployed() {
               </Avatar>
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <h4 className="text-sm font-semibold">María Rodríguez</h4>
+                  <h4 className="text-sm font-semibold">Mar&iacute;a Rodr&iacute;guez</h4>
                   <div className="flex items-center gap-1">
                     <StarIcon className="w-4 h-4 fill-yellow-500" />
                     <StarIcon className="w-4 h-4 fill-yellow-500" />
@@ -165,8 +164,8 @@ export default function DashboardEmployed() {
                   </div>
                 </div>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                  "Juan es un excelente desarrollador. Siempre está dispuesto a ayudar y su código es limpio y bien
-                  documentado."
+                  &quot;Juan es un excelente desarrollador. Siempre est&aacute; dispuesto a ayudar y su c&oacute;digo es limpio y bien
+                  documentado.&quot;
                 </p>
                 <div className="flex items-center gap-2 mt-2">
                   <Button size="sm" variant="outline">
@@ -186,7 +185,7 @@ export default function DashboardEmployed() {
               </Avatar>
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <h4 className="text-sm font-semibold">José Castillo</h4>
+                  <h4 className="text-sm font-semibold">Jos&eacute; Castillo</h4>
                   <div className="flex items-center gap-1">
                     <StarIcon className="w-4 h-4 fill-yellow-500" />
                     <StarIcon className="w-4 h-4 fill-yellow-500" />
@@ -196,8 +195,8 @@ export default function DashboardEmployed() {
                   </div>
                 </div>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                  "Laura es una diseñadora increíble. Sus diseños son modernos y atractivos, y siempre logra capturar
-                  la esencia de nuestros proyectos."
+                  &quot;Laura es una dise&ntilde;adora incre&iacute;ble. Sus dise&ntilde;os son modernos y atractivos, y siempre logra capturar
+                  la esencia de nuestros proyectos.&quot;
                 </p>
                 <div className="flex items-center gap-2 mt-2">
                   <Button size="sm" variant="outline">
@@ -217,7 +216,7 @@ export default function DashboardEmployed() {
               </Avatar>
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <h4 className="text-sm font-semibold">Ana García</h4>
+                  <h4 className="text-sm font-semibold">Ana Garc&iacute;a</h4>
                   <div className="flex items-center gap-1">
                     <StarIcon className="w-4 h-4 fill-yellow-500" />
                     <StarIcon className="w-4 h-4 fill-yellow-500" />
@@ -227,8 +226,8 @@ export default function DashboardEmployed() {
                   </div>
                 </div>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                  "Pedro es un experto en análisis de datos. Sus informes son claros y detallados, y siempre está
-                  dispuesto a explicar sus hallazgos."
+                  &quot;Pedro es un experto en an&aacute;lisis de datos. Sus informes son claros y detallados, y siempre est&aacute;
+                  dispuesto a explicar sus hallazgos.&quot;
                 </p>
                 <div className="flex items-center gap-2 mt-2">
                   <Button size="sm" variant="outline">
@@ -242,7 +241,7 @@ export default function DashboardEmployed() {
             </div>
           </div>
           <div className="mt-4 flex justify-end">
-            <Button>Ver Más Reseñas</Button>
+            <Button>Ver M&aacute;s Rese&ntilde;as</Button>
           </div>
         </div>
       </div>
@@ -251,13 +250,13 @@ export default function DashboardEmployed() {
       <SheetTrigger asChild>
         <Button className="fixed bottom-4 right-4" variant="link">
           <CogIcon className="w-4 h-4 mr-2" />
-          Configuración
+          Configuraci&oacute;n
         </Button>
       </SheetTrigger>
       <SheetContent className="max-w-md" side="right">
         <SheetHeader>
-          <SheetTitle>Configuración de la Empresa</SheetTitle>
-          <SheetDescription>Actualiza la información de tu empresa.</SheetDescription>
+          <SheetTitle>Configuraci&oacute;n de la Empresa</SheetTitle>
+          <SheetDescription>Actualiza la informaci&oacute;n de tu empresa.</SheetDescription>
         </SheetHeader>
         <div className="p-4">
           <div className="mb-4">
