@@ -1,11 +1,11 @@
 
-import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import { CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { SheetTrigger, SheetTitle, SheetDescription, SheetHeader, SheetContent, Sheet } from "@/components/ui/sheet"
 import { Label } from "@/components/ui/label"
+import Image from "next/image"
 
 export default function DashboardEmployed() {
   return (<>
@@ -271,7 +271,7 @@ export default function DashboardEmployed() {
               Logo de la Empresa
             </Label>
             <div className="flex items-center gap-4">
-              <img
+              <Image
                 alt="Logo"
                 className="rounded-full"
                 height={48}

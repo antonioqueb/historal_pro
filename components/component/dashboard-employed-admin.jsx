@@ -8,7 +8,7 @@ import { DialogTrigger, DialogTitle, DialogDescription, DialogHeader, DialogFoot
 import { Textarea } from "@/components/ui/textarea"
 import { FaSearch } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-
+import Image from "next/image";
 
 
 export default function DashboardEmployedAdmin() {
@@ -140,7 +140,7 @@ export default function DashboardEmployedAdmin() {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
-              <img
+              <Image
                 alt="Foto del Empleado"
                 className="w-full h-full object-cover"
                 height={80}
@@ -174,7 +174,7 @@ export default function DashboardEmployedAdmin() {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
-              <img
+              <Image
                 alt="Foto del Empleado"
                 className="w-full h-full object-cover"
                 height={80}
@@ -208,7 +208,7 @@ export default function DashboardEmployedAdmin() {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
-              <img
+              <Image
                 alt="Foto del Empleado"
                 className="w-full h-full object-cover"
                 height={80}
@@ -242,7 +242,7 @@ export default function DashboardEmployedAdmin() {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
-              <img
+              <Image
                 alt="Foto del Empleado"
                 className="w-full h-full object-cover"
                 height={80}
@@ -276,7 +276,7 @@ export default function DashboardEmployedAdmin() {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
-              <img
+              <Image
                 alt="Foto del Empleado"
                 className="w-full h-full object-cover"
                 height={80}

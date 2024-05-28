@@ -4,6 +4,7 @@ import { DropdownMenuTrigger, DropdownMenuContent, DropdownMenu } from "@/compon
 import { Label } from "@/components/ui/label";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function DashboardEmployedHistory() {
   const employees = [
@@ -162,7 +163,7 @@ export default function DashboardEmployedHistory() {
           <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
             <div className="flex items-center gap-4 p-4">
               <div className="w-20 h-20 rounded-full overflow-hidden">
-                <img
+                <Image
                   alt="Foto del Empleado"
                   className="w-full h-full object-cover"
                   height={80}

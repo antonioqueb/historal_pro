@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenuTrigger, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import { Label } from "@/components/ui/label"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
+import Image from "next/image"
 
 export default function DashboardEmployedList() {
   return (
@@ -72,7 +73,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -95,7 +96,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -118,7 +119,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -141,7 +142,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -164,7 +165,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -187,7 +188,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -210,7 +211,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}
@@ -233,7 +234,7 @@ export default function DashboardEmployedList() {
         <div
           className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="aspect-square">
-            <img
+            <Image
               alt="Employee Photo"
               className="w-full h-full object-cover"
               height={400}

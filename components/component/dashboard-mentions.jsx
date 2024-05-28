@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { SheetTrigger, SheetTitle, SheetDescription, SheetHeader, SheetContent, Sheet } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export default function DashboardMentions() {
   return (<>
@@ -43,7 +44,7 @@ export default function DashboardMentions() {
                     Logo de la Empresa
                   </Label>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       alt="Logo"
                       className="rounded-full"
                       height={48}
@@ -191,7 +192,7 @@ export default function DashboardMentions() {
                 Logo de la Empresa
               </Label>
               <div className="flex items-center gap-4">
-                <img
+                <Image
                   alt="Logo"
                   className="rounded-full"
                   height={48}

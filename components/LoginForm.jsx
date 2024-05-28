@@ -71,7 +71,7 @@ export default function Component() {
           </div>
         </form>
         <div className="mt-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
-          Don't have an account?
+          hola
           <Link className="font-semibold text-zinc-600 hover:text-zinc-500 dark:text-zinc-400" href="#">
             Sign up
           </Link>
