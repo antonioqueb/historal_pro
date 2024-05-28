@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 export default function DashboardPreferenceSetting() {
   return (
     (<div
-      className="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900">
+      className="flex flex-col items-center justify-center bg-zinc-100 dark:bg-zinc-900">
       <Card className="w-full p-8">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">Moderar Menciones</CardTitle>

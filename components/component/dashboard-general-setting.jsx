@@ -11,7 +11,7 @@ export default function DashboardGeneralSetting() {
       <div className="w-full space-y-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-bold">Ajustes Generales</h1>
-          <p className="text-gray-500 dark:text-gray-400">Actualiza tu información personal.</p>
+          <p className="text-zinc-500 dark:text-zinc-400">Actualiza tu información personal.</p>
         </div>
         <Card>
           <CardContent className="space-y-6">

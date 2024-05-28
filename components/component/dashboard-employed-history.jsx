@@ -106,9 +106,9 @@ export default function DashboardEmployedHistory() {
         <h1 className="text-2xl font-bold">Historial Laboral de Empleados</h1>
         <div className="flex items-center gap-4">
           <div className="relative w-full max-w-md">
-            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 w-5 h-5" />
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-400 w-5 h-5" />
             <Input
-              className="pl-10 pr-4 py-2 rounded-md bg-white shadow-sm dark:bg-gray-800 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
+              className="pl-10 pr-4 py-2 rounded-md bg-white shadow-sm dark:bg-zinc-800 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
               placeholder="Buscar historial..."
               type="search"
             />
@@ -160,7 +160,7 @@ export default function DashboardEmployedHistory() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {employees.map((employee, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+          <div key={index} className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
             <div className="flex items-center gap-4 p-4">
               <div className="w-20 h-20 rounded-full overflow-hidden">
                 <Image
@@ -174,15 +174,15 @@ export default function DashboardEmployedHistory() {
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-semibold">{employee.name}</h3>
-                <p className="text-gray-500 dark:text-gray-400">{employee.role}</p>
+                <p className="text-zinc-500 dark:text-zinc-400">{employee.role}</p>
                 <p className="text-sm line-clamp-2">{employee.description}</p>
               </div>
             </div>
-            <div className="bg-gray-100 dark:bg-gray-700 p-4">
+            <div className="bg-zinc-100 dark:bg-zinc-700 p-4">
               <h4 className="text-base font-semibold mb-2">Historial Laboral</h4>
               <ul className="space-y-2">
                 {employee.history.map((job, jobIndex) => (
-                  <li key={jobIndex} className="text-sm text-gray-500 dark:text-gray-400">
+                  <li key={jobIndex} className="text-sm text-zinc-500 dark:text-zinc-400">
                     <span className="font-semibold">{job.period}:</span> {job.position}
                   </li>
                 ))}

@@ -29,7 +29,7 @@ export default function Component() {
       {session ? (
           <div className="flex items-center gap-2">
             {imageError || !session.user.image ? (
-              <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full text-xl text-white">
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-300 rounded-full text-xl text-white">
                 {getFirstNameAndSurname(session.user.name)}
               </div>
             ) : (
@@ -46,7 +46,7 @@ export default function Component() {
           </div>
         ) : (
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full text-xl text-white">
+            <div className="w-10 h-10 flex items-center justify-center bg-zinc-300 rounded-full text-xl text-white">
               NA
             </div>
             <span className="dark:text-zinc-100">Usuario</span>

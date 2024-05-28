@@ -18,9 +18,9 @@ export default function DashboardEmployedAdmin() {
         <h1 className="text-2xl font-bold mb-4 md:mb-0">Administrar Empleados</h1>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-4">
           <div className="relative w-full max-w-md">
-            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 w-5 h-5" />
+            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-400 w-5 h-5" />
             <Input
-              className="pl-10 pr-4 py-2 rounded-md bg-white shadow-sm dark:bg-gray-800 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
+              className="pl-10 pr-4 py-2 rounded-md bg-white shadow-sm dark:bg-zinc-800 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
               placeholder="Buscar empleado..."
               type="search"
             />
@@ -137,7 +137,7 @@ export default function DashboardEmployedAdmin() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
               <Image
@@ -154,12 +154,12 @@ export default function DashboardEmployedAdmin() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Juan Pérez</h3>
-              <p className="text-gray-500 dark:text-gray-400">Gerente</p>
+              <p className="text-zinc-500 dark:text-zinc-400">Gerente</p>
               <p className="text-sm line-clamp-2">
                 Juan es un gerente experimentado con más de 10 años de experiencia en la industria. Es conocido por su
                 pensamiento estratégico y su capacidad para motivar a su equipo.
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Tiempo laborando: 8 años</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo laborando: 8 años</p>
             </div>
             <div className="flex gap-2">
               <Button className="rounded-full" size="icon" variant="outline">
@@ -171,7 +171,7 @@ export default function DashboardEmployedAdmin() {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
               <Image
@@ -188,12 +188,12 @@ export default function DashboardEmployedAdmin() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold">María Rodríguez</h3>
-              <p className="text-gray-500 dark:text-gray-400">Desarrolladora</p>
+              <p className="text-zinc-500 dark:text-zinc-400">Desarrolladora</p>
               <p className="text-sm line-clamp-2">
                 María es una desarrolladora habilidosa con pasión por crear soluciones innovadoras. Siempre está ansiosa
                 por aprender nuevas tecnologías y colaborar con su equipo.
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Tiempo laborando: 3 años</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo laborando: 3 años</p>
             </div>
             <div className="flex gap-2">
               <Button className="rounded-full" size="icon" variant="outline">
@@ -205,7 +205,7 @@ export default function DashboardEmployedAdmin() {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
               <Image
@@ -222,12 +222,12 @@ export default function DashboardEmployedAdmin() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Carlos Hernández</h3>
-              <p className="text-gray-500 dark:text-gray-400">Diseñador</p>
+              <p className="text-zinc-500 dark:text-zinc-400">Diseñador</p>
               <p className="text-sm line-clamp-2">
                 Carlos es un diseñador talentoso con ojo para el detalle y pasión por crear diseños visualmente
                 impresionantes. Siempre está explorando nuevas tendencias y técnicas de diseño.
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Tiempo laborando: 5 años</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo laborando: 5 años</p>
             </div>
             <div className="flex gap-2">
               <Button className="rounded-full" size="icon" variant="outline">
@@ -239,7 +239,7 @@ export default function DashboardEmployedAdmin() {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
               <Image
@@ -256,12 +256,12 @@ export default function DashboardEmployedAdmin() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Ana García</h3>
-              <p className="text-gray-500 dark:text-gray-400">Recursos Humanos</p>
+              <p className="text-zinc-500 dark:text-zinc-400">Recursos Humanos</p>
               <p className="text-sm line-clamp-2">
                 Ana es una profesional experta en recursos humanos con una gran capacidad para gestionar el talento y
                 fomentar un ambiente de trabajo positivo. Su enfoque es siempre el bienestar de los empleados.
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Tiempo laborando: 6 años</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo laborando: 6 años</p>
             </div>
             <div className="flex gap-2">
               <Button className="rounded-full" size="icon" variant="outline">
@@ -273,7 +273,7 @@ export default function DashboardEmployedAdmin() {
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-4 p-4">
             <div className="w-20 h-20 rounded-full overflow-hidden">
               <Image
@@ -290,13 +290,13 @@ export default function DashboardEmployedAdmin() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Pedro Ramírez</h3>
-              <p className="text-gray-500 dark:text-gray-400">Mercadotecnia</p>
+              <p className="text-zinc-500 dark:text-zinc-400">Mercadotecnia</p>
               <p className="text-sm line-clamp-2">
                 Pedro es un experto en mercadotecnia con un profundo conocimiento de las últimas tendencias y
                 estrategias. Su creatividad y pensamiento innovador lo convierten en un activo invaluable para la
                 empresa.
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Tiempo laborando: 2 años</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400">Tiempo laborando: 2 años</p>
             </div>
             <div className="flex gap-2">
               <Button className="rounded-full" size="icon" variant="outline">
