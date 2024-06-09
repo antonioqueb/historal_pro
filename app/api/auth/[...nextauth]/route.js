@@ -1,5 +1,8 @@
+// src/app/api/auth/[...nextauth]/route.ts
 import NextAuth from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
+import { AuthOptions, TokenSet } from "next-auth";
+import { JWT } from "next-auth/jwt";
 
 // Función para refrescar el token de acceso
 async function requestRefreshOfAccessToken(token) {
@@ -43,10 +46,18 @@ export const authOptions = {
           refreshToken: account.refresh_token,
           expiresAt: account.expires_at,
         };
-      } else if (Date.now() < token.expiresAt * 1000 - 60 * 1000) {
+        return token;
+      }
+      // Buffer de un minuto (60 * 1000 ms)
+      if (Date.now() < token.expiresAt * 1000 - 60 * 1000) {
         return token;
       } else {
-        token = await requestRefreshOfAccessToken(token);
+        try {
+          token = await requestRefreshOfAccessToken(token);
+        } catch (error) {
+          console.error("Error refreshing access token", error);
+          return { ...token, error: "RefreshAccessTokenError" };
+        }
       }
       return token;
     },

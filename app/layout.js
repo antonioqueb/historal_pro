@@ -2,6 +2,7 @@ import "../app/globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
 import SessionWrapper from "@/components/SessionWrapper";
+import SessionGuard from '@/components/SessionGuard'
 
 import { cn } from "@/lib/utils";
 
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
+            <SessionGuard>
             {children}
+          </SessionGuard>
           </ThemeProvider>
       </body>
     </html>

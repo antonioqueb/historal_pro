@@ -6,7 +6,7 @@ import React from 'react'
 
 const SessionWrapper = ({ children }) => {
   return (
-    <SessionProvider>
+    <SessionProvider refetchInterval={4 * 60}>
       {children}
     </SessionProvider>
   )
