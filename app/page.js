@@ -2,6 +2,12 @@
 
 
 
+
+import { Search } from "lucide-react";
+import Image from "next/image";
+import SearchHome from "@/components/SearchHome";
+import Header from "@/components/Header"
+
 // src/app/page.tsx
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
@@ -13,6 +19,11 @@ export default async function Home() {
     return <div>
       <div>Your name is {session.user?.name}</div>
       <div><Logout /> </div>
+      <Header />
+      <main className="w-full">
+        <SearchHome />
+
+      </main>
     </div>
   }
   return (
@@ -25,12 +36,6 @@ export default async function Home() {
 
 
 
-
-
-// import { Search } from "lucide-react";
-// import Image from "next/image";
-// import SearchHome from "@/components/SearchHome";
-// import Header from "@/components/Header"
 
 
 // export default function Home() {
