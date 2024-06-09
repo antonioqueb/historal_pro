@@ -8,7 +8,8 @@ export const authOptions = {
       clientSecret: process.env.KEYCLOAK_CLIENT_SECRET,
       issuer: process.env.KEYCLOAK_ISSUER
     })
-  ]
+  ],
+  secret: process.env.NEXTAUTH_SECRET // Asegúrate de añadir esto
 }
 
 const handler = (req, res) => NextAuth(req, res, authOptions);
