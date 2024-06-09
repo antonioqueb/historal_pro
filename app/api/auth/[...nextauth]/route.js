@@ -1,8 +1,7 @@
-// src/app/api/auth/[...nextauth]/route.ts
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
-export const authOptions: AuthOptions = {
+export const authOptions = {
   providers: [
     KeycloakProvider({
       clientId: process.env.KEYCLOAK_CLIENT_ID,
@@ -12,5 +11,5 @@ export const authOptions: AuthOptions = {
   ]
 }
 
-const handler = NextAuth(authOptions);
+const handler = (req, res) => NextAuth(req, res, authOptions);
 export { handler as GET, handler as POST };
