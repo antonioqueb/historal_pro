@@ -14,8 +14,15 @@ model User {
   id    String  @id @default(cuid())
   email String  @unique
   name  String?
+  employees  Employee[]
 }
- 
+model Employee {
+  id       String   @id @default(cuid())
+  name     String
+  userId   String
+  user     User     @relation(fields: [userId], references: [id])
+}
+
 // model Contact {
 //   id        Int      @id @default(autoincrement())
 //   name      String
