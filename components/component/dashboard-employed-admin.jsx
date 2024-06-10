@@ -55,7 +55,7 @@ export default function DashboardEmployedAdmin() {
   };
 
   const handleAddEmployee = async () => {
-    const res = await fetch("/api/auth/employees", {
+    const res = await fetch("/api/employees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

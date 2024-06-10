@@ -13,7 +13,7 @@ export default function DashboardEmployedList() {
 
   useEffect(() => {
     async function fetchEmployees() {
-      const response = await fetch("/api/auth/employees");
+      const response = await fetch("/api/employees");
       const data = await response.json();
       setEmployees(data);
     }

@@ -3,13 +3,10 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
-  console.log(`Received ${req.method} request at /api/auth/employees`);
-
+export async function GET(req) {
   const session = await getSession({ req });
   if (!session) {
-    console.error("Unauthorized: No session found");
-    return res.status(401).json({ error: "Unauthorized" });
+    return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
   }
 
   const user = await prisma.user.findUnique({
@@ -17,42 +14,55 @@ export default async function handler(req, res) {
   });
 
   if (!user) {
-    console.error("User not found for email:", session.user.email);
-    return res.status(404).json({ error: "User not found" });
+    return new Response(JSON.stringify({ error: "User not found" }), { status: 404 });
   }
 
-  if (req.method === "GET") {
-    console.log("Handling GET request");
-    const employees = await prisma.employee.findMany({
-      where: { userId: user.id },
+  const employees = await prisma.employee.findMany({
+    where: { userId: user.id },
+  });
+  return new Response(JSON.stringify(employees), { status: 200 });
+}
+
+export async function POST(req) {
+  const session = await getSession({ req });
+  if (!session) {
+    return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email },
+  });
+
+  if (!user) {
+    return new Response(JSON.stringify({ error: "User not found" }), { status: 404 });
+  }
+
+  const body = await req.json();
+  const { name, role, department, description } = body;
+
+  if (!name || !role || !department || !description) {
+    return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400 });
+  }
+
+  try {
+    const employee = await prisma.employee.create({
+      data: {
+        name,
+        role,
+        department,
+        description,
+        userId: user.id,
+      },
     });
-    return res.status(200).json(employees);
-  } else if (req.method === "POST") {
-    console.log("Handling POST request with body:", req.body);
-    const { name, role, department, description } = req.body;
-    if (!name || !role || !department || !description) {
-      console.error("Bad Request: Missing required fields");
-      return res.status(400).json({ error: "Missing required fields" });
-    }
-    try {
-      const employee = await prisma.employee.create({
-        data: {
-          name,
-          role,
-          department,
-          description,
-          userId: user.id,
-        },
-      });
-      console.log("Employee created:", employee);
-      return res.status(201).json(employee);
-    } catch (error) {
-      console.error("Failed to create employee:", error);
-      return res.status(500).json({ error: "Failed to create employee" });
-    }
-  } else {
-    res.setHeader("Allow", ["GET", "POST"]);
-    console.error(`Method ${req.method} Not Allowed`);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return new Response(JSON.stringify(employee), { status: 201 });
+  } catch (error) {
+    console.error("Failed to create employee:", error);
+    return new Response(JSON.stringify({ error: "Failed to create employee" }), { status: 500 });
   }
 }
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
