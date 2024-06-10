@@ -1,8 +1,12 @@
 import React from 'react';
 import DasboardSidebar from '@/components/component/dasboard-sidebar' // Asegúrate de que la ruta sea correcta
 import DashboardNabvar from '@/components/component/dashboard-nabvar'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth';
 
-const LayoutDashboard = ({ children }) => {
+const  LayoutDashboard = ({ children }) => {
+  const session =  getServerSession(authOptions);
+  if (session) {
   return (
     <div className="flex">
       <DasboardSidebar />
@@ -14,6 +18,8 @@ const LayoutDashboard = ({ children }) => {
       </div>
     </div>
   );
+}
+return null;
 }
 
 export default LayoutDashboard;
