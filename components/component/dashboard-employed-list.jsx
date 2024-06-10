@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,6 @@ import { DropdownMenuTrigger, DropdownMenuContent, DropdownMenu } from "@/compon
 import { Label } from "@/components/ui/label";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select";
 import Image from "next/image";
-import { SearchIcon, FilterIcon } from "@/components/Icons";
 
 export default function DashboardEmployedList() {
   const [employees, setEmployees] = useState([]);
@@ -28,7 +27,8 @@ export default function DashboardEmployedList() {
         <h1 className="text-2xl font-bold">Empleados</h1>
         <div className="flex items-center gap-4">
           <div className="relative w-full max-w-md">
-            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-400 w-5 h-5" />
+            <SearchIcon
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 dark:text-zinc-400 w-5 h-5" />
             <Input
               className="pl-10 pr-4 py-2 rounded-md bg-white shadow-sm dark:bg-zinc-800 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-full"
               placeholder="Buscar empleados..."
@@ -108,5 +108,42 @@ export default function DashboardEmployedList() {
         ))}
       </div>
     </div>
+  );
+}
+
+function FilterIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+    </svg>
+  );
+}
+
+function SearchIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
   );
 }
