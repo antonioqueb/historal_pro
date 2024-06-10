@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function GET(req) {
+export const GET = async (req) => {
   const session = await getSession({ req });
   if (!session) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
@@ -21,9 +21,9 @@ export async function GET(req) {
     where: { userId: user.id },
   });
   return new Response(JSON.stringify(employees), { status: 200 });
-}
+};
 
-export async function POST(req) {
+export const POST = async (req) => {
   const session = await getSession({ req });
   if (!session) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
@@ -59,9 +59,10 @@ export async function POST(req) {
     console.error("Failed to create employee:", error);
     return new Response(JSON.stringify({ error: "Failed to create employee" }), { status: 500 });
   }
-}
+};
 
-export const config = {
+// Usa defineRouteSegmentConfig si necesitas configuración adicional
+export const routeSegmentConfig = {
   api: {
     bodyParser: false,
   },
