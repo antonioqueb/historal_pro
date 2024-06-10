@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { Input } from "@/components/ui/input";
@@ -21,6 +21,7 @@ export default function DashboardEmployedAdmin() {
     department: "",
     description: "",
   });
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (session) {
@@ -56,6 +57,11 @@ export default function DashboardEmployedAdmin() {
     if (res.ok) {
       const addedEmployee = await res.json();
       setEmployees([...employees, addedEmployee]);
+      setNewEmployee({ name: "", role: "", department: "", description: "" });
+      setError(null);
+    } else {
+      const errorData = await res.json();
+      setError(errorData.error);
     }
   };
 
@@ -126,6 +132,7 @@ export default function DashboardEmployedAdmin() {
                 <DialogTitle>Agregar Empleado</DialogTitle>
                 <DialogDescription>Ingrese los detalles del nuevo empleado.</DialogDescription>
               </DialogHeader>
+              {error && <p className="text-red-500">{error}</p>}
               <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
                   <Label className="text-right md:text-left md:col-span-1" htmlFor="name">

@@ -26,16 +26,23 @@ export default async function handler(req, res) {
     res.status(200).json(employees);
   } else if (req.method === "POST") {
     const { name, role, department, description } = req.body;
-    const employee = await prisma.employee.create({
-      data: {
-        name,
-        role,
-        department,
-        description,
-        userId: user.id,
-      },
-    });
-    res.status(201).json(employee);
+    if (!name || !role || !department || !description) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+    try {
+      const employee = await prisma.employee.create({
+        data: {
+          name,
+          role,
+          department,
+          description,
+          userId: user.id,
+        },
+      });
+      res.status(201).json(employee);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to create employee" });
+    }
   } else {
     res.setHeader("Allow", ["GET", "POST"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
