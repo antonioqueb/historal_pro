@@ -1,7 +1,8 @@
+'use client'
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Login from "@/components/Login";
 import { getServerSession } from "next-auth";
-import { redirect, useParams } from "next/navigation";
+import { redirect } from "next/navigation";
 
 const signinErrors = {
   // ...

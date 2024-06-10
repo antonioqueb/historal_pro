@@ -1,4 +1,6 @@
 // src/app/auth/signout/page.js
+'use client'
+
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Logout from "@/components/Logout";
 import { getServerSession } from "next-auth";
