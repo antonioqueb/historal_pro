@@ -14,7 +14,7 @@ export default function Header() {
 
   useEffect(() => {
     if (session) {
-      fetch('/api/auth/employees')
+      fetch('/api/employees')
         .then((res) => res.json())
         .then((data) => setEmployees(data));
     }

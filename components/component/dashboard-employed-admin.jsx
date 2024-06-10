@@ -25,7 +25,7 @@ export default function DashboardEmployedAdmin() {
 
   useEffect(() => {
     if (session) {
-      fetch("/api/auth/employees")
+      fetch("/api/employees")
         .then((res) => {
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
