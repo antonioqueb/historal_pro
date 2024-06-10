@@ -1,24 +1,25 @@
-'use client'
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import  ModeToggle  from "./ModeToggle"
+'use client';
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import ModeToggle from "./ModeToggle";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import Image from "next/image";
 
-
-export default function Component() {
+export default function Header() {
   const [imageError, setImageError] = useState(false);
-
-
   const { data: session } = useSession();
+
   const handleImageError = () => {
     setImageError(true);
   };
+
   const getFirstNameAndSurname = (name) => {
     const names = name.split(' ');
     return `${names[0]} ${names[1]}`;
   };
+
   return (
     <header className="flex h-16 w-full items-center justify-between px-4 md:px-6">
       <Link className="flex items-center gap-2" href="/">
@@ -26,7 +27,7 @@ export default function Component() {
         <span className="sr-only">Historial Laboral</span>
       </Link>
       <div className="flex items-center gap-4">
-      {session ? (
+        {session ? (
           <div className="flex items-center gap-2">
             {imageError || !session.user.image ? (
               <div className="w-10 h-10 flex items-center justify-center bg-zinc-300 rounded-full text-xl text-white">
@@ -54,19 +55,21 @@ export default function Component() {
         )}
 
         <Button className="rounded-full" size="icon" variant="ghost">
-         <ModeToggle />
+          <ModeToggle />
         </Button>
-        {/* <Button variant="outline">
-            <Link href="/registrarse">
-           Registrate
-            </Link>
+        {!session && (
+          <>
+            <Button variant="outline">
+              <Link href="/registrarse">Registrate</Link>
             </Button>
-        <Button> <Link href="/login">
-            Iniciar Sesión
-            </Link></Button> */}
+            <Button>
+              <Link href="/login">Iniciar Sesión</Link>
+            </Button>
+          </>
+        )}
       </div>
     </header>
-  )
+  );
 }
 
 function MoonIcon(props) {
@@ -85,9 +88,8 @@ function MoonIcon(props) {
     >
       <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
     </svg>
-  )
+  );
 }
-
 
 function MountainIcon(props) {
   return (
@@ -105,8 +107,5 @@ function MountainIcon(props) {
     >
       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
     </svg>
-  )
+  );
 }
-
-  
-
