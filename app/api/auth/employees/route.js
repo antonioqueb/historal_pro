@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     const employees = await prisma.employee.findMany({
       where: { userId: user.id },
     });
-    res.status(200).json(employees);
+    return res.status(200).json(employees);
   } else if (req.method === "POST") {
     const { name, role, department, description } = req.body;
     if (!name || !role || !department || !description) {
@@ -39,12 +39,12 @@ export default async function handler(req, res) {
           userId: user.id,
         },
       });
-      res.status(201).json(employee);
+      return res.status(201).json(employee);
     } catch (error) {
-      res.status(500).json({ error: "Failed to create employee" });
+      return res.status(500).json({ error: "Failed to create employee" });
     }
   } else {
     res.setHeader("Allow", ["GET", "POST"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }

@@ -26,8 +26,17 @@ export default function DashboardEmployedAdmin() {
   useEffect(() => {
     if (session) {
       fetch("/api/auth/employees")
-        .then((res) => res.json())
-        .then((data) => setEmployees(data));
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+          }
+          return res.json();
+        })
+        .then((data) => setEmployees(data))
+        .catch((error) => {
+          console.error('Error fetching employees:', error);
+          setError('Failed to fetch employees');
+        });
     }
   }, [session]);
 
@@ -278,7 +287,8 @@ function PlusIcon(props) {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
-      viewBox="0 0 24 24"
+      viewBox="0 0 24
+24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
