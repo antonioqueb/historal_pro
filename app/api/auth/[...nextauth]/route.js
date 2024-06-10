@@ -1,8 +1,9 @@
-// src/app/api/auth/[...nextauth]/route.ts
+// src/app/api/auth/[...nextauth]/route.js
 import NextAuth from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
-import { AuthOptions, TokenSet } from "next-auth";
-import { JWT } from "next-auth/jwt";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 // Función para refrescar el token de acceso
 async function requestRefreshOfAccessToken(token) {
@@ -37,7 +38,7 @@ export const authOptions = {
   ],
   session: { maxAge: 60 * 30 },
   callbacks: {
-    async jwt({ token, account }) {
+    async jwt({ token, account, user }) {
       if (account) {
         token = {
           ...token,
@@ -46,7 +47,6 @@ export const authOptions = {
           refreshToken: account.refresh_token,
           expiresAt: account.expires_at,
         };
-        return token;
       }
       // Buffer de un minuto (60 * 1000 ms)
       if (Date.now() < token.expiresAt * 1000 - 60 * 1000) {
@@ -64,6 +64,21 @@ export const authOptions = {
     async session({ session, token }) {
       session.accessToken = token.accessToken;
       return session;
+    },
+    async signIn({ user, account, profile }) {
+      const email = user.email;
+      if (email) {
+        const existingUser = await prisma.user.findUnique({ where: { email } });
+        if (!existingUser) {
+          await prisma.user.create({
+            data: {
+              email: user.email,
+              name: user.name,
+            },
+          });
+        }
+      }
+      return true;
     },
   },
   pages: {
