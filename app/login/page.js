@@ -1,12 +1,12 @@
 
 
-import LoginForm from '@/components/ui/login-form';
+import Login from '@/components/Login';
 
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center md:h-screen p-24">
       
-        <LoginForm />
+        <Login />
     
     </main>
   );
