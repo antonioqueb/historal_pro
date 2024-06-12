@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { createEmployee } from './actions/createEmployee';
-
+// imported createEmployee function from actions/createEmployee.js
 export default function DashboardEmployedAdmin() {
   return (
     <div className="w-full mx-auto px-4 md:px-6 py-12">
