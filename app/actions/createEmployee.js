@@ -2,7 +2,7 @@
 import { PrismaClient } from '@prisma/client';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../api/auth/[...nextauth]';
-
+// file: app/actions/createEmployee.js
 const prisma = new PrismaClient();
 
 export async function createEmployee(formData, req) {
