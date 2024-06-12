@@ -1,10 +1,18 @@
 // app/actions/createEmployee.js
 import { PrismaClient } from '@prisma/client';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../api/auth/[...nextauth]';
 
 const prisma = new PrismaClient();
 
-export async function createEmployee(formData) {
-  const { name, role, department, description, userId } = formData;
+export async function createEmployee(formData, req) {
+  const session = await getServerSession(req, authOptions);
+  if (!session) {
+    return { success: false, message: 'User not authenticated' };
+  }
+
+  const { name, role, department, description } = Object.fromEntries(formData);
+  const userId = session.user.id;
 
   try {
     const employee = await prisma.employee.create({
