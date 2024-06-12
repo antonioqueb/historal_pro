@@ -62,14 +62,13 @@ export default function DashboardEmployedAdmin() {
               id="description"
               name="description"
               placeholder="Ingrese una breve descripción del empleado"
-              required
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
             <Label className="text-right md:text-left md:col-span-1" htmlFor="userId">
               User ID
             </Label>
-            <Input className="col-span-3" id="userId" name="userId" required />
+            <Input className="col-span-3" id="userId" name="userId" />
           </div>
         </div>
         <Button type="submit">Agregar</Button>
