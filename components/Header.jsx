@@ -4,21 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ModeToggle from "./ModeToggle";
 import { useSession } from "next-auth/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Header() {
   const [imageError, setImageError] = useState(false);
   const { data: session } = useSession();
-  const [employees, setEmployees] = useState([]);
-
-  useEffect(() => {
-    if (session) {
-      fetch('/api/employees')
-        .then((res) => res.json())
-        .then((data) => setEmployees(data));
-    }
-  }, [session]);
 
   const handleImageError = () => {
     setImageError(true);
@@ -53,14 +44,6 @@ export default function Header() {
               />
             )}
             <span className="dark:text-zinc-100">{getFirstNameAndSurname(session.user.name)}</span>
-            <div className="ml-4">
-              <h3 className="text-xl">Empleados:</h3>
-              <ul>
-                {employees.map((employee) => (
-                  <li key={employee.id}>{employee.name} - {employee.position}</li>
-                ))}
-              </ul>
-            </div>
           </div>
         ) : (
           <div className="flex items-center gap-2">
